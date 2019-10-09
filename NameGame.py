@@ -1,7 +1,7 @@
 import random
 import time
 
-names = ["Jean_Luc", "Patrick Bateman", "Elidia ","Rob T", "Tyler Scotch", "Benjamin Bauer", "Satoshi Nakamoto"]
+names = ["Jean_Luc", "Patrick Bateman", "Elidia","Rob T", "Tyler Scotch", "Benjamin Bauer", "Satoshi Nakamoto"]
 facts = ["Boxing", "Mergers and Acquisitions", "Biomedical", None, None, None, None]
 points = 0
 
@@ -45,6 +45,6 @@ for i in range(len(facts)):
         points = points + 1
         print("correct")
     else:
-        print("kys", " it was ", names[rand1], sep = "")
+        print("Burn in hell", " it was ", names[rand1], sep = "")
         
 print("you only got ", points, " points, haha")
