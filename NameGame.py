@@ -15,11 +15,11 @@ for i in range(len(names)):
     # Matching names to a hobby or fact about the person if there is no preset fact.
     if(presetFacts[i] == None):
 
-        rand1 = random.randint(0, hobbiesAndFacts.__len__()-1)
+        rand1 = random.randint(0, len(hobbiesAndFacts)-1)
         #Searches for a new random Hobby/Fact if the random one selected has already been used and is now equal
         #to none.
         while(hobbiesAndFacts[rand1] == None):
-            rand1 = random.randint(0, hobbiesAndFacts.__len__()-1)
+            rand1 = random.randint(0, len(hobbiesAndFacts)-1)
         
         presetFacts[i] = hobbiesAndFacts[rand1]
         hobbiesAndFacts[rand1] = None
@@ -34,15 +34,15 @@ time.sleep(5)
 for x in range(200):
     print(".")
 
+
 #Asking the user to guess the names in random order.
 for i in range(len(presetFacts)):
-    
-    rand1 = random.randint(0, presetFacts.__len__()-1)
+
+    rand1 = random.randint(0, len(presetFacts)-1)
     #Checks if the fact has been used already
     while(presetFacts[rand1] == None):
-        rand1 = random.randint(0, hobbiesAndFacts.__len__()-1)
-    
-
+        #print("ahhhh still looking")
+        rand1 = random.randint(0, len(presetFacts)-1)
     
     print("Who is associated with ", presetFacts[rand1], "?", sep='')
     
@@ -56,4 +56,8 @@ for i in range(len(presetFacts)):
 
     #Removes the fact once it has been used.
     presetFacts[rand1] = None
-print("you only got ", points, " points, haha")
+
+if points == len(presetFacts):
+    print("Full marks, not bad")
+else:
+    print("You only got ", points, " points, haha")
